@@ -1,0 +1,13 @@
+---
+title: Dev tools
+subtitle: chrome extension
+layout: default
+modal-id: 1
+date: 2025-10-02
+img: devtools-1.0.png
+thumbnail: devtools-1.0.png
+alt: Dev tools 1.0 released
+project-date: Octobor 2025
+category: chrome extension
+description: Our plugin is live! 🚀 From idea to product, this journey not only delivered a tool but also helped me master the plugin development process and expand my skills. Excited to see how it boosts developers’ workflows—your feedback will shape its future!
+---
