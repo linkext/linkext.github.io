@@ -20,10 +20,20 @@ people:
     # - title: stack-overflow
     #   url: #
 
+
 # Social networks usernames (many more available: google-plus, flickr, dribbble, pinterest, instagram, tumblr, linkedin, etc.)
+# Display in footer section
 social:
-  - title: email
-    url: mailto:linkext.labs@gmail.com
+  # - title: twitter
+  #   url: http://twitter.com/jekyllrb
+  # - title: facebook
+  #   url:
+  # - title: stack-overflow
+  #   url: http://stackoverflow.com/questions/tagged/jekyll
+  # - title: bitbucket 
+  #   url: http://bitbucket.org/jekyll
+  # - title: github
+  #   url: http://github.com/jekyll
 
 # Postal address (add as many lines as necessary)
 # address:
