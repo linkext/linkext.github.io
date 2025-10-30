@@ -6,8 +6,10 @@
 
 body {
     overflow-x: hidden;
-    font-family: "Roboto Slab","Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-family: {{ site.data.template.font.primary }};
     color: #{{ site.data.template.color.secondary-dark }};
+    font-weight: 400;
+    line-height: 1.6;
 }
 
 .text-muted {
@@ -19,12 +21,14 @@ body {
 }
 
 p {
-    font-size: 14px;
-    line-height: 1.75;
+    font-size: 16px;
+    line-height: 1.7;
+    font-weight: 400;
 }
 
 p.large {
-    font-size: 16px;
+    font-size: 18px;
+    line-height: 1.6;
 }
 
 a,
@@ -119,15 +123,18 @@ fieldset[disabled] .btn-primary.active {
 }
 
 .btn-xl {
-    padding: 20px 40px;
-    border-color: #{{ site.data.template.color.primary }};
-    border-radius: 3px;
-    text-transform: uppercase;
+    padding: 18px 36px;
+    border-color: transparent;
+    border-radius: 8px;
+    text-transform: none;
     font-family: {{ site.data.template.font.primary }};
-    font-size: 18px;
-    font-weight: 700;
+    font-size: 16px;
+    font-weight: 600;
     color: #fff;
-    background-color: #{{ site.data.template.color.primary }};
+    background: linear-gradient(45deg, #{{ site.data.template.color.primary }}, #{{ site.data.template.color.secondary }});
+    box-shadow: 0 4px 15px rgba(13, 110, 253, 0.3);
+    transition: all 0.3s ease;
+    letter-spacing: 0.5px;
 }
 
 .btn-xl:hover,
@@ -135,9 +142,11 @@ fieldset[disabled] .btn-primary.active {
 .btn-xl:active,
 .btn-xl.active,
 .open .dropdown-toggle.btn-xl {
-    border-color: #{{ site.data.template.color.primary }};
+    border-color: transparent;
     color: #fff;
-    background-color: #{{ site.data.template.color.secondary }};
+    background: linear-gradient(45deg, #{{ site.data.template.color.secondary }}, #{{ site.data.template.color.primary }});
+    box-shadow: 0 6px 20px rgba(13, 110, 253, 0.4);
+    transform: translateY(-2px);
 }
 
 .btn-xl:active,
@@ -268,14 +277,16 @@ fieldset[disabled] .btn-xl.active {
 header {
     text-align: center;
     color: #fff;
+    background: linear-gradient(135deg, #0d6efd 0%, #6f42c1 100%);
     background-attachment: scroll;
-    background-image: url('{{ site.baseurl }}/img/header-bg.jpg');
     background-position: center center;
     background-repeat: none;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     background-size: cover;
     -o-background-size: cover;
+    position: relative;
+    overflow: hidden;
 }
 
 header .intro-text {
@@ -284,11 +295,13 @@ header .intro-text {
 }
 
 header .intro-text .intro-lead-in {
-    margin-bottom: 25px;
-    font-family: {{ site.data.template.font.secondary }};
-    font-size: 22px;
-    font-style: italic;
-    line-height: 22px;
+    margin-bottom: 35px;
+    font-family: {{ site.data.template.font.primary }};
+    font-size: 28px;
+    font-weight: 300;
+    line-height: 1.4;
+    opacity: 0.95;
+    letter-spacing: 0.5px;
 }
 
 header .intro-text .intro-heading {
@@ -331,16 +344,19 @@ section {
 section h2.section-heading {
     margin-top: 0;
     margin-bottom: 15px;
-    font-size: 40px;
+    font-size: 42px;
+    font-weight: 700;
+    letter-spacing: -0.5px;
 }
 
 section h3.section-subheading {
     margin-bottom: 75px;
     text-transform: none;
-    font-family: {{ site.data.template.font.secondary }};
-    font-size: 16px;
-    font-style: italic;
+    font-family: {{ site.data.template.font.primary }};
+    font-size: 18px;
     font-weight: 400;
+    opacity: 0.8;
+    letter-spacing: 0.5px;
 }
 
 @media(min-width:768px) {
@@ -356,7 +372,16 @@ section h3.section-subheading {
 
 #portfolio .portfolio-item {
     right: 0;
-    margin: 0 0 15px;
+    margin: 0 0 30px;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+    transition: all 0.3s ease;
+}
+
+#portfolio .portfolio-item:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 15px 40px rgba(0,0,0,0.15);
 }
 
 #portfolio .portfolio-item .portfolio-link {
@@ -374,8 +399,8 @@ section h3.section-subheading {
     -webkit-transition: all ease .5s;
     -moz-transition: all ease .5s;
     transition: all ease .5s;
-    background: rgba(254,209,54,.9); /* Fallback when no plugin support */
-    background: rgba({{ site.data.template.color.primary | hex_to_rgb | join: ',' }}, .9);
+    background: linear-gradient(45deg, rgba(13, 110, 253, 0.9), rgba(111, 66, 193, 0.9));
+    backdrop-filter: blur(2px);
 }
 
 #portfolio .portfolio-item .portfolio-link .portfolio-hover:hover {
@@ -408,6 +433,7 @@ section h3.section-subheading {
     max-width: 400px;
     text-align: center;
     background-color: #fff;
+    border-top: 3px solid #{{ site.data.template.color.primary }};
 }
 
 #portfolio .portfolio-item .portfolio-caption h4 {
